@@ -1,21 +1,26 @@
 {
+   "manifest_version": 2,
    "name": "Assessment Companion",
-   "description": "Allows Students to take content assesments securely using a browser lockdown",
-   "version": "0.1.5",
-   "manifest_version": 3,
+   "version": "1.0",
+   "description": "Allows Students to take content assesments securely using a browser lockdown on Firefox",
    "permissions": [
       "tabs"
    ],
-   "background": {
-      "service_worker": "js/background.js"
-   },
-   "externally_connectable": {
-      "matches": [ "*://*.summitlearning.org/*", "http://localhost/*", "https://*.czedi.com/*" ]
-   },
    "icons": {
       "128": "images/icons/icon128.png",
       "16": "images/icons/icon16.png",
       "48": "images/icons/icon48.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi7X/fDXBIcSkxTlNynuYM/O6Ikw209P1Y8X/Nc71IbSijMdqGIXdy31a9yAU/Pbp1ueO9jsKxA9bWFm0E9nw87cXvYXEghH456+NkhTiF0Rrj+EqIWRQ4gsCqkBFd451t5LcdoMArGUUz8mjp7agu2Ln48jc2T7EiWnFQaUCY9TGfpDNwsc1QIwkKrAVs0+z9o5wTf3zZ1iNrObxSzdhH7psVRfgz23WEpq3wtJcawNwkkoQaTVrOBggu2Sm02j3c98l1ICEYTCNP6Cb1ip6CzI4SwQG3juyVWVaZcDBvySTKdSlb2cZMH4CdptzQaAWNIJG0scm7ThefIKrs8GY8wIDAQAB"
+   "content_scripts:": [
+      {
+      "matches": [ "*://*.summitlearning.org/*", "http://localhost/*", "https://*.czedi.com/*" ],
+      "js": "js/background.js"
+      }
+   ],
+   "browser_specific_settings": {
+      "gecko": {
+        "id": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi7X/fDXBIcSkxTlNynuYM/O6Ikw209P1Y8X/Nc71IbSijMdqGIXdy31a9yAU/Pbp1ueO9jsKxA9bWFm0E9nw87cXvYXEghH456+NkhTiF0Rrj+EqIWRQ4gsCqkBFd451t5LcdoMArGUUz8mjp7agu2Ln48jc2T7EiWnFQaUCY9TGfpDNwsc1QIwkKrAVs0+z9o5wTf3zZ1iNrObxSzdhH7psVRfgz23WEpq3wtJcawNwkkoQaTVrOBggu2Sm02j3c98l1ICEYTCNP6Cb1ip6CzI4SwQG3juyVWVaZcDBvySTKdSlb2cZMH4CdptzQaAWNIJG0scm7ThefIKrs8GY8wIDAQAB",
+        "strict_min_version": "42.0"
+      }
+    }
 }

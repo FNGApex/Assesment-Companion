@@ -15,7 +15,7 @@ let targetUrl;
 let targetEnabled = false;
 let intervalHandle;
 // handle case when windowId or tabId changes
-chrome.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
+browser.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
   switch (request.method) {
     case "assessment_started":
       break;
