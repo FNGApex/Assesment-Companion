@@ -10,23 +10,23 @@
  *
  */
 let targetTabId;
-let targetWindowId;
-let targetUrl;
-let targetEnabled = false;
-let intervalHandle;
+//let targetWindowId;
+//let targetUrl;
+//let targetEnabled = false;
+//let intervalHandle;
 // handle case when windowId or tabId changes
-browser.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
-  switch (request.method) {
-    case "assessment_started":
-      break;
-    case "assessment_ended":
-      break;
-    case "assessment_status":
-      sendResponse({message: true});
-      return;
-    default:
-      // Don't respond to unknown messages
-      return;
-  }
-  sendResponse({message: "success"});
-});
+// browser.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
+//   switch (request.method) {
+//     case "assessment_started":
+//       break;
+//     case "assessment_ended":
+//       break;
+//     case "assessment_status":
+//       sendResponse({message: true});
+//       return;
+//     default:
+//       // Don't respond to unknown messages
+//       return;
+//   }
+//   sendResponse({message: "success"});
+// });
