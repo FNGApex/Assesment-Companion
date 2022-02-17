@@ -11,7 +11,7 @@
       "scripts": ["js/background.js"]
    },
    "content_scripts": [{
-      "matches": ["http://localhost:7800/"],
+      "matches": ["http://localhost/*"],
       "js": ["js/contentscript.js"]
    }],
    "browser_specific_settings": {
