@@ -7,7 +7,7 @@ let sending;
 buttons[0].addEventListener("click", function (e) {
   textarea.innerText = "Sent Start Message";
   sending = browser.runtime.sendMessage({
-    request : "lockBrowser"
+    message : "lockBrowser"
   });
   sending.then(function (response) {
     textarea.innerText = response;
@@ -19,7 +19,24 @@ buttons[0].addEventListener("click", function (e) {
 
 buttons[1].addEventListener("click", function (e) {
   textarea.innerText = "Status Message:";
+  sending = browser.runtime.sendMessage({
+    message: "browserStatus"
+  })
+  sending.then(function (response){
+    textarea.innerText = response
+  }, function(error){
+    textarea.innerText = "Error" + error;
+  })
+
 });
 buttons[2].addEventListener("click", function (e) {
+  sending = browser.runtime.sendMessage({
+    message: "unlockBrowser"
+  })
   textarea.innerText = "Sent End Message";
+  sending.then(function (response){
+    textarea.innerText = response
+  }, function(error){
+    textarea.innerText = "Error" + error;
+  })
 });
